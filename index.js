@@ -28,14 +28,28 @@ const dataObjectFrom = (data) => {
     weatherDesc: data.days[0].conditions,
     precipChance: `${data.days[0].precipprob}%`,
     windSpeed: `${data.days[0].windspeed}km/h`,
-    windDirec: data.days[0].winddir,
+    uvIndex: data.days[0].uvindex,
   }
 }
 
 const searchBox = {
-  input: document.querySelector('input'),
+  input: document.querySelector('input').value,
   button: document.querySelector('button'),
+}
 
+const component = {
+  city: document.querySelector(".city").textContent,
+  country: document.querySelector(".country").textContent,
+  date: document.querySelector(".date").textContent,
+  temp: document.querySelector(".temp").textContent,
+  max: document.querySelector(".max").textContent,
+  feels: document.querySelector(".feels").textContent,
+  min: document.querySelector(".min").textContent,
+  desc: document.querySelector(".description").textContent,
+  rain: document.querySelector(".rain").textContent,
+  humidity: document.querySelector(".humidity").textContent,
+  uvIndex: document.querySelector(".uv-index").textContent,
+  wind: document.querySelector(".wind").textContent,
 }
 
 const renderData = (data) => {

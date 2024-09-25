@@ -44,34 +44,161 @@ h6 {
   isolation: isolate;
 }
 
+@font-face {
+  font-family: "SF Pro";
+  src: url(./font/SF-Pro-Text-Regular.otf);
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  font-family: "SF Pro", Arial, Helvetica, sans-serif;
+  background-image: url(./bg/bg-sun.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overscroll-behavior: none;
+  --text-col: #ededed;
+  --text-col-alt: #808080;
+  --black-glass: rgba(0, 0, 0, 0.35);
+  color: var(--text-col);
 }
 
 .glass {
-  background: rgba(206, 206, 206, 0.18);
-  border-radius: 16px;
+  background: var(--black-glass);
+  border-radius: 35px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(7.3px);
   -webkit-backdrop-filter: blur(7.3px);
   border: 1px solid rgba(206, 206, 206, 0.63);
 }
 
-.container {
-  width: 600px;
-  padding: 15px;
+main.container,
+.search.container {
+  width: 450px;
+}
+
+main.container {
+  padding: 25px 35px 35px 35px;
 }
 
 .search.container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 20px;
+  padding: 10px 10px 10px 25px;
 }
 
 .search > input {
   border: none;
   background: none;
+  outline: none;
+  caret-color: var(--text-col);
+  width: 250px;
+  height: 50px;
+  color: var(--text-col);
+}
+
+.search > button {
+  border: none;
+  background-color: var(--text-col);
+  padding: 10px 20px;
+  border-radius: 25px;
+  box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  color: var(--text-col-alt);
+}
+
+.search > button:hover {
+  animation: scale 100ms ease-in-out forwards;
+}
+
+@keyframes scale {
+  100% {
+    transform: scale(1.02);
+  }
+}
+
+.main.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.city {
+  font-size: 50px;
+}
+
+.country {
+  font-size: 28px;
+  margin-top: -10px;
+  margin-bottom: 3px;
+}
+
+.date {
+  font-size: 16px;
+}
+
+.temperature.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.temp {
+  font-size: 120px;
+  position: relative;
+}
+
+.temp::after {
+  position: absolute;
+  content: "°";
+  font-size: 60px;
+  top: 22px;
+}
+
+.temp-min-max {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 0px;
+}
+
+.temp-min-max > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.min-pre,
+.max-pre,
+.feels-like {
+  font-size: 12px;
+}
+
+.min,
+.max,
+.feels {
+  font-size: 18px;
+}
+
+.description {
+  font-size: 24px;
+}
+
+.details.container {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.details.container > div {
+  display: flex;
+  justify-content: space-between;
 }

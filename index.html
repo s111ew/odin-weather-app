@@ -10,46 +10,35 @@
   <body>
     <section class="glass search container">
       <input type="text" placeholder="Search for a location" />
-      <button class="search-button">
-        <img
-          src="./svg/search_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
-          alt="search icon"
-        />
-      </button>
+      <button class="search-button"> Search </button>
     </section>
     <main class="glass main container">
       <div class="header container">
-        <div class="place">
-          <span class="city">London,</span>
-          <span class="country">England</span>
-          <span class="date">Mon, Sept 23rd</span>
-        </div>
-        <div class="graphic">
-          <span>X</span>
-        </div>
+        <span class="city">London,</span>
+        <span class="country">England</span>
+        <span class="date">Mon, 23 Sept</span>
       </div>
       <div class="temperature container">
-        <span>22</span>
+        <span class="temp">22</span>
         <div class="temp-min-max">
-          <span class="max">26</span>
-          <span class="min">19</span>
+          <div
+            ><span class="max-pre">High</span> <span class="max">26°</span></div
+          >
+          <div
+            ><span class="feels-like">Feels</span>
+            <span class="feels">19°</span></div
+          >
+          <div
+            ><span class="min-pre">Low</span> <span class="min">19°</span></div
+          >
         </div>
       </div>
-      <span>Partially cloudy</span>
+      <span class="description">Partially cloudy</span>
       <div class="details container">
-        <div class="details-column">
-          <div><span>Feels lik</span><span>23</span></div>
-          <div><span>Humidity</span><span>12%</span></div>
-          <div><span>Chance of rain</span><span>9%</span></div>
-        </div>
-        <div class="detail-row">
-          <span>Wind Speed</span>
-          <div>
-            <img src="#" alt="" />
-            <img src="#" alt="" />
-          </div>
-          <span>12 km/h</span>
-        </div>
+        <div><span>Chance of rain:</span><span class="rain">9%</span></div>
+        <div><span>Humidity:</span><span class="humidity">12%</span></div>
+        <div><span>UV Index:</span><span class="uv-index">6</span></div>
+        <div><span>Wind Speed:</span><span class="wind">12 km/h</span></div>
       </div>
     </main>
   </body>
